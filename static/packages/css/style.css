@@ -1,0 +1,547 @@
+@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+html,
+body {
+    font-family: 'Poppins', sans-serif;
+    background: rgb(243, 243, 243);
+}
+
+
+/*-------------------------------------
+                Logo
+----------------------------------------*/
+
+.logo a,
+.logo a:hover,
+.logo a:focus {
+    color: #fff;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 14px 0px 0;
+    padding: 10px 0 0 0;
+}
+
+.logo a span {
+    color: #00d8ff !important;
+    text-transform: capitalize !important;
+}
+
+.wrapper {
+    display: flex;
+    align-items: center;
+}
+
+ul ul a {
+    color: #000 !important;
+    font-size: 0.9em !important;
+    padding-left: 30px !important;
+    background: #00d8ff;
+}
+
+a[data-toggle="collapse"] {
+    position: relative !important;
+}
+
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+}
+
+p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.1em;
+    font-weight: 300;
+    line-height: 1.7em;
+    color: #999;
+}
+
+.content {
+    padding-left: 20px;
+    width: 100%;
+}
+
+
+/*-------------------------------------
+		4. 	Tabs
+--------------------------------------*/
+
+.single-travel-boxes {
+    background: #fff;
+}
+
+.tab-para p {
+    font-size: 24px;
+    color: #000;
+}
+
+.desc-tabs {
+    position: relative;
+    margin-top: -200px;
+    border: transparent;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+    padding-top: 16px;
+}
+
+.desc-tabs .nav-tabs {
+    display: inline-flex;
+    border-right: 1px solid #fff;
+}
+
+.desc-tabs .tab-content>.tab-pane.active {
+    visibility: visible !important;
+}
+
+.desc-tabs .nav-tabs>li.active>a {
+    margin-right: 2px;
+    visibility: visible;
+    color: #fff;
+    background: #00d8ff;
+    cursor: default;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.desc-tabs .nav-tabs>li.active>a:focus,
+.desc-tabs .nav-tabs>li.active>a:hover {
+    color: #565a5c;
+    text-decoration: none;
+}
+
+.desc-tabs .nav-tabs>li>a {
+    color: #fff;
+    background: #00d8ff;
+    cursor: default;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    padding: 17px 40px 17px 46px;
+    border: 0;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.single-travel-boxes .nav>li>a:focus,
+.single-travel-boxes .nav>li>a:hover {
+    color: #565a5c;
+    background: #fff;
+    border: 0;
+    text-decoration: none;
+}
+
+.desc-tabs .nav-tabs>li>a>i {
+    padding-right: 6px;
+}
+
+.travel-budget {
+    margin-top: 38px;
+}
+
+.travel-budget h3 {
+    color: #565a5c;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+.tab-para {
+    padding: 43px 42px 10px;
+}
+
+
+/*---------------------------
+    Tab Internal Design
+-----------------------------*/
+
+.tab-heading {
+    color: #000 !important;
+    text-decoration: none;
+}
+
+.tab-heading:hover {
+    text-decoration: none;
+}
+
+.meal-list li {
+    display: inline-flex;
+    align-items: center;
+    padding: 5px;
+    color: #777;
+}
+
+ul.meal-list {
+    text-align: end;
+}
+
+.details {
+    list-style: none;
+    display: inline-block;
+}
+
+.fa-fw {
+    margin-right: 3px !important;
+}
+
+.card-body {
+    margin-top: 0px !important;
+    padding-top: 0% !important;
+}
+
+.card-body p {
+    font-size: 15px !important;
+}
+
+.highlight-body {
+    font-size: 15px !important;
+}
+
+
+/*-------------------------------------
+        13.  Footer-copyright
+--------------------------------------*/
+
+.footer-copyright {
+    margin-top: 200px;
+    background: #f9f9f9;
+    padding: 0 0 60px;
+}
+
+.footer-content {
+    padding: 120px 0;
+}
+
+
+/*single-footer-item*/
+
+.single-footer-item {
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+.single-footer-item h2 {
+    color: #565a5c;
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 40px;
+}
+
+
+/*single-footer-item*/
+
+
+/*footer-logo*/
+
+.footer-logo {
+    padding-top: 76px;
+}
+
+.footer-logo a,
+.footer-logo a:hover,
+.footer-logo a:focus {
+    color: #565a5c;
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+    font-weight: 600;
+    margin: 14px 0px 0;
+    padding: 10px 0 0 0;
+}
+
+.footer-logo a>span {
+    color: #00d8ff;
+    text-transform: capitalize;
+}
+
+.footer-logo p {
+    color: #aaa;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: capitalize;
+}
+
+
+/*footer-logo*/
+
+
+/*single-footer-txt*/
+
+.single-footer-txt p {
+    margin-bottom: 8px;
+}
+
+.single-footer-txt p a {
+    color: #565a5c;
+    font-size: 16px;
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -ms-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+}
+
+.single-footer-txt p a:hover {
+    -webkit-transition: scaleX(1.2);
+    -moz-transition: scaleX(1.2);
+    -ms-transition: scaleX(1.2);
+    -o-transition: scaleX(1.2);
+    transform: scaleX(1.2);
+    color: #00d8ff;
+}
+
+
+/*single-footer-txt*/
+
+.footer-copyright hr {
+    border-top: 1px solid #ebebeb;
+}
+
+
+/*foot-icons*/
+
+.foot-icons {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.foot-icons .footer-social-links li {
+    display: inline-flex;
+    padding: 0 10px;
+    text-align: center;
+}
+
+.foot-icons .footer-social-links a {
+    color: #fff;
+    display: block;
+    font-size: 18px;
+    width: 60px;
+    line-height: 60px;
+    height: 60px;
+    border-radius: 50%;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    -moz-transition: all 0.5s ease-in-out 0s;
+    -o-transition: all 0.5s ease-in-out 0s;
+    -ms-transition: all 0.5s ease-in-out 0s;
+    transition: all 0.5s ease-in-out 0s;
+    border-radius: 50%;
+}
+
+.foot-icon-bg-1 {
+    background: #3b5999;
+}
+
+.foot-icon-bg-2 {
+    background: #1da1f3;
+}
+
+.foot-icon-bg-3 {
+    /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#8938ae+0,c13181+100 */
+    background: #8938ae;
+    /* Old browsers */
+    background: -webkit-linear-gradient(right, #8938ae 0%, #c13181 100%);
+    background: -o-linear-gradient(right, #8938ae 0%, #c13181 100%);
+    background: linear-gradient(to right, #8938ae 0%, #c13181 100%);
+}
+
+.foot-icons .footer-social-links a:hover {
+    /*color: #00d8d5;*/
+    color: #2cdbb5;
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    transform: rotate(360deg);
+}
+
+.foot-icons p {
+    color: #aaa;
+    font-size: 16px;
+    margin-top: 28px;
+}
+
+.foot-icons p a,
+.foot-icons p a:hover,
+.foot-icons p a:focus {
+    color: #00d8ff;
+    font-size: 16px;
+    margin-top: 28px;
+}
+
+
+/*===============================
+         Scroll Top
+===============================*/
+
+#scroll-Top .return-to-top {
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    display: none;
+    width: 40px;
+    line-height: 40px;
+    height: 40px;
+    text-align: center;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 15;
+    color: #fff;
+    background: #00d8ff;
+    border: 1px solid #00d8ff;
+    border-radius: 5px;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+    z-index: 2;
+}
+
+#scroll-Top .return-to-top:hover {
+    background: #2cdbb5;
+    color: #fff;
+    border-radius: 50%;
+}
+
+
+/*foot-icons*/
+
+
+/* Side bar dialog box demo*/
+
+.book-now-box {
+    display: grid;
+    background: #fff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, .1);
+    margin-top: 30px;
+    padding-top: 16px;
+    border: transparent;
+}
+
+.home-border {
+    border-top: 2px solid #00d8ff;
+}
+
+.short-detail {
+    position: relative;
+    justify-self: auto;
+}
+
+.short-detail span {
+    font-family: 'Poppins', sans-serif;
+    color: #999;
+}
+
+.book-body {
+    color: #999 !important;
+    margin-top: 15px;
+}
+
+.book-body span {
+    font-size: 20px;
+}
+
+.book-body span i {
+    margin-right: 3px;
+}
+
+.book-body span a i {
+    margin-right: 3px;
+}
+
+.book-body span a {
+    color: #999;
+}
+
+.book-footer {
+    font-size: 30px;
+    position: relative;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+}
+
+.book-footer .about-btn a:hover {
+    text-decoration: none !important;
+}
+
+.about-btn {
+    letter-spacing: 1.2px;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.about-view {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #00d8ff;
+    border: 1px solid #00d8ff;
+    width: 200px;
+    height: 60px;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    text-transform: uppercase;
+    border-radius: 5px;
+    box-shadow: 0 5px 20px rgba(14, 15, 18, .2);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -ms-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.about-view.packages-btn {
+    width: 110px;
+    height: 35px;
+    font-size: 14px;
+    color: #fff !important;
+    text-transform: capitalize;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    transition: .5s;
+}
+
+.about-btn button a:link {
+    color: #fff !important;
+}
+
+.about-btn button a:hover {
+    text-decoration: none !important;
+    color: #fff;
+}
+
+.about-btn:hover .about-view {
+    color: #fff;
+    background: #00d8d5;
+    box-shadow: 0 5px 20px rgba(14, 15, 18, .7);
+    border: 1px solid #00d8d5;
+}
+
+.about-view.packages-btn:hover {
+    text-decoration: none !important;
+    box-shadow: 0 5px 20px rgba(14, 15, 18, .3);
+}
+
+.note-list {
+    color: rgb(136, 0, 0);
+}

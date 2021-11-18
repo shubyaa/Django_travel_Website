@@ -1,0 +1,364 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% for item in destination %}
+    <title>{{item.name}}</title>
+    {% endfor %}
+
+
+    <!--Poppins Font-->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+
+    <!--Cutom Style.css-->
+    <link rel="stylesheet" href="{% static 'packages/css/style.css' %}">
+
+    <!-- favicon img -->
+    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}" />
+    <!--Font Awesome-->
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+
+
+
+</head>
+
+<body>
+    <!--Wrapper-->
+    <div class="wrapper flex-column">
+
+        <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                {% for img in packages%} {% if forloop.counter == 1 %}
+                <div class="carousel-item active">
+                    <img class="d-block w-100" src="{{img.image.url}}" alt="Second slide" />
+                </div>
+                {% else %}
+                <div class="carousel-item">
+                    <img class="d-block w-100" src="{{img.image.url}}" alt="Second slide" />
+                </div>
+                {% endif %} {% endfor %}
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+
+        <!--Page Content-->
+        <div class="content d-flex">
+            <section class="p-2 w-100 travel-box">
+                <div class="align-self-center container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="single-travel-boxes">
+                                <div id="desc-tabs" class="desc-tabs">
+
+                                    <ul class="nav nav-tabs" role="tablist">
+
+                                        <li role="presentation" class="active">
+                                            <a href="#itenary" aria-controls="itenary" role="tab" data-toggle="tab">
+                                                <i class="fa fa-eye"></i> itenary
+                                            </a>
+                                        </li>
+
+                                        <li role="presentation">
+                                            <a href="#highlights" aria-controls="highlights" role="tab" data-toggle="tab">
+                                                <i class="fa fa-lightbulb"></i> highlights
+                                            </a>
+                                        </li>
+
+                                    </ul>
+                                    <div class="tab-content">
+
+                                        <div role="tabpanel" class="tab-pane fade active show" id="itenary">
+                                            {% for p in packages%}
+                                            <div class="tab-para">
+                                                <p>
+                                                    <a class="tab-heading" data-toggle="collapse" data-parent="#{{p.title}}" href="#{{p.id}}" aria-expanded="true" aria-controls="{{p.id}}">
+                                                      {{p.title}}
+                                                    </a>
+                                                </p>
+                                                <div class="row">
+
+                                                    <div class="collapse show" id="{{p.id}}">
+                                                        <div class="card-body">
+                                                            <div class="short-detail">
+                                                                <span>{{p.duration}} days</span>
+                                                            </div>
+                                                            <p> {{p.description}}
+                                                            </p>
+                                                            <ul class="meal-list">
+                                                                {% if p.breakfast %}
+                                                                <li> <i class="fa fa-coffee" style="margin-right: 5px;"></i> Breakfast</li>
+                                                                {% endif %} {% if p.lunch %}
+                                                                <li> <i class="fa fa-utensil-spoon" style="margin-right: 5px;"></i> Lunch </li>
+                                                                {% endif %} {% if p.dinner %}
+                                                                <li><i class="fa fa-utensils" style="margin-right: 5px;"></i>Dinner</li>
+                                                                {% endif %}
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--/.row-->
+                                            </div>
+                                            <!--/.tab-para-->
+                                            {% endfor %}
+                                        </div>
+
+                                        <div role="tabpanel" class="tab-pane fade in" id="highlights">
+                                            {% for h in highlight %}
+                                            <div class="tab-para">
+                                                <p>
+                                                    <a class="tab-heading" data-toggle="collapse" data-parent="#{{h.id}}" href="#{{h.id}}" aria-expanded="true" aria-controls="{{h.id}}">
+                                                      Highlights
+                                                    </a>
+                                                </p>
+                                                <div class="row">
+                                                    <div class="collapse show" id="{{h.id}}">
+                                                        <div class="card-body">
+                                                            <p> {{h.points|escape|linebreaks}}
+                                                            </p>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!--/.row-->
+                                            </div>
+                                            <!--/.tab-para-->
+                                            {% endfor %}
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+            <div class="d-flex flex-column w-50 mr-5">
+                {% for i in destination %}
+                <div class="container">
+                    <div class="row">
+                        <div class="p-3 book-now-box">
+                            <div class="card-body">
+                                <h5>Mysteries of India</h5>
+                                <div class="home-border"></div>
+                                <div class="short-detail">
+                                    <span class="pull-left">{{i.package_details}}</span>
+                                    <span class="pull-right">
+                                        {% with ''|center:i.rating as range %} {% for _ in range %}
+                                        <i class="fa fa-star" style="color: rgb(255, 220, 0);"></i> {% endfor %} {% endwith %}
+                                        <span>{{i.reviews}} reviews</span>
+                                    </span> <br>
+                                </div>
+                                <div class="book-body">
+                                    <p>{{i.description}}</p>
+                                    <div class="row m-2">
+                                        <ul class=" col-sm-6 details float-left">
+                                            {% for item in flights %} {% if item.available %}
+                                            <li><i class="fas fa-plane mr-2"></i>{{item.to_location}}
+                                            </li>
+                                            {% endif %} {% endfor %}
+                                        </ul>
+                                        <ul class="col-sm-6 details float-right">
+                                            {% for item in hotel %} {% if item.available %}
+                                            <li><i class="fas fa-building mr-2"></i>{{item.name}}
+                                            </li>
+                                            {% endif %} {% endfor %}
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="book-footer">
+                                <div class="row align-items-center">
+                                    <div class="col-sm-6">
+                                        <span class="float-left">$ {{i.price}}</span>
+                                    </div>
+                                    <div class="col-sm-6 about-btn ">
+                                        <a class="float-right" href="#">
+                                            <button class="about-view packages-btn">
+                                                book now
+                                                </button>
+                                        </a>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+                <div class="container">
+                    <div class="row">
+                        <div class="book-now-box p-3 w-100">
+                            <div class="card-body">
+                                <h5>Need Help?</h5>
+                                <div class="home-border"></div>
+                                <div class="book-body">
+                                    <span> <i class="fas fa-mobile"></i> +91 12346543</span> <br>
+                                    <span> <a href="#"><i class="fas fa-envelope"></i> info@travellust.com</a></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="column mt-5">
+                <div class="book-now-box p-5">
+                    <div>
+                        <h5>Please Note</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group note-list">
+                            <li>Although we pride ourselves in constantly maintaining our programme the above mentioned programme is subject to change without prior notice.</li>
+                            <li>Considering current pandemic situation some sightseeing places might be closed temporarily without any prior intimation, in such situation we will try to visit an alternate sightseeing if possible.</li>
+                            <li>Considering the current situation, we request all guest to follow mandatory travel requirements like RT PCR Tests, Vaccination certificates, Self Declaration, E Pass formalities etc as per the state / country's COVID Rules
+                                & Regulations, which are subject to change from time to time. Any cost incurred for these requirements will be borne by guest.</li>
+                        </ul>
+                    </div>
+                </div>
+
+
+
+            </div>
+        </div>
+    </div>
+
+    <!-- footer-copyright start -->
+    <footer class="footer-copyright">
+        <div class="container">
+            <div class="footer-content">
+                <div class="row">
+
+                    <div class="col-sm-3">
+                        <div class="single-footer-item">
+                            <div class="footer-logo">
+                                <a href="{% url 'travel_:home' %}">
+										Travel<span>Lust</span>
+									</a>
+                                <p>
+                                    best travel agency
+                                </p>
+                            </div>
+                        </div>
+                        <!--/.single-footer-item-->
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-3">
+                        <div class="single-footer-item">
+                            <h2>link</h2>
+                            <div class="single-footer-txt">
+                                <p><a href="#">home</a></p>
+                                <p><a href="#">destination</a></p>
+                                <p><a href="#">spacial packages</a></p>
+                                <p><a href="#">special offers</a></p>
+                                <p><a href="#">blog</a></p>
+                                <p><a href="#">contacts</a></p>
+                            </div>
+                            <!--/.single-footer-txt-->
+                        </div>
+                        <!--/.single-footer-item-->
+
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-3">
+                        <div class="single-footer-item">
+                            <h2>popular destination</h2>
+                            <div class="single-footer-txt">
+                                {% for i in lists%}
+                                <p><a href="#">{{i.name}}</a></p>
+                                {% endfor %}
+                            </div>
+                            <!--/.single-footer-txt-->
+                        </div>
+                        <!--/.single-footer-item-->
+                    </div>
+                    <!--/.col-->
+
+                    <div class="col-sm-3">
+                        <div class="single-footer-item text-center">
+                            <h2 class="text-left">contacts</h2>
+                            <div class="single-footer-txt text-left">
+                                <p>+91 1234 6543</p>
+                                <p class="foot-email"><a href="#">info@travellust.com</a></p>
+                                <p>N.M. Joshi Marg</p>
+                                <p>Mumbai, India</p>
+                            </div>
+                            <!--/.single-footer-txt-->
+                        </div>
+                        <!--/.single-footer-item-->
+                    </div>
+                    <!--/.col-->
+
+                </div>
+                <!--/.row-->
+
+            </div>
+            <!--/.footer-content-->
+            <hr>
+            <div class="foot-icons ">
+                <ul class="footer-social-links list-inline list-unstyled">
+                    <li><a href="#" target="_blank" class="foot-icon-bg-1"><i class="fab fa-facebook"></i></a></li>
+                    <li><a href="#" target="_blank" class="foot-icon-bg-2"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#" target="_blank" class="foot-icon-bg-3"><i class="fab fa-instagram"></i></a></li>
+                </ul>
+                <p>&copy; 2017 <a target="_blank" href="https://www.github.com/shubyaa">Shubham P.</a>. All Right Reserved</p>
+
+            </div>
+            <!--/.foot-icons-->
+            <div id="scroll-Top">
+                <i class="fa fa-angle-double-up return-to-top" id="scroll-top" data-toggle="tooltip" data-placement="top" title="" data-original-title="Back to Top" aria-hidden="true"></i>
+            </div>
+            <!--/.scroll-Top-->
+        </div>
+        <!-- /.container-->
+
+    </footer>
+    <!-- /.footer-copyright-->
+    <!-- footer-copyright end -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+
+    <!--jquery-ui.min.js-->
+    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+
+    <!--modernizr.min.js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+    <script src="https://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+    <!--Awesome Fonts-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+
+    <!-- Popper.JS -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script type="text/javascript" src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+
+    <script src="{% static 'assets/js/main.js' %}"></script>
+</body>
+
+</html>

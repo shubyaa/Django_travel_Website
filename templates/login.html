@@ -1,0 +1,87 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Karla:400,700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.materialdesignicons.com/4.8.95/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static 'assets/css/login.css' %}">
+
+    <!-- favicon img -->
+    <link rel="shortcut icon" type="image/icon" href="{% static 'assets/logo/favicon.png' %}" />
+</head>
+
+<body>
+    <main>
+        <!--Modal Pop-Up-->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="modal fade" id="mymodal">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content p-1">
+                                <div class="modal-header">Message</div>
+                                <div class="modal-body">
+                                    {% for item in messages %}
+                                    <p>{{item}}</p>
+                                    {% endfor %}
+                                </div>
+                                <div class="modal-footer">
+                                    <input type="button" value="Close" name="modal_button" class="btn btn-primary" data-dismiss="modal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--MOdal Pop-Up End-->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-6 login-section-wrapper">
+                    <div class="brand-wrapper">
+                        <div class="logo">
+                            <a href="{% url 'travel_:home' %}">
+									          Travel<span>Lust</span><br>
+								            </a>
+                            <p>Best travel agency</p>
+                        </div>
+                        <!-- /.logo-->
+                    </div>
+                    <div class="login-wrapper my-auto">
+                        <h1 class="login-title">Log in</h1>
+                        <form action="login" method="post">
+                            {% csrf_token %}
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="name" name="name" id="name" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label for="password">Password</label>
+                                <input type="password" name="password" id="password" class="form-control" placeholder="enter your passsword">
+                            </div>
+                            <input name="login" id="login" class="btn btn-block login-btn" type="submit" value="Login" data-toggle="modal" data-target="#mymodal">
+                        </form>
+                        <a href="#!" class="forgot-password-link">Forgot password?</a>
+                        <p class="login-wrapper-footer-text">Don't have an account? <a href="{% url 'accounts:register' %}" class="text-reset">Register here</a></p>
+                    </div>
+                </div>
+                <div class="col-sm-6 px-0 d-none d-sm-block">
+                    <img src="{% static 'assets/images/form/login.jpg' %}" alt="login image" class="login-img img-responsive">
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
