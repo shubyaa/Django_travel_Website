@@ -115,7 +115,10 @@ Most Amazing part is my all Packages page use the same Layout and there is no ne
 
 ## Demo
 
-Insert gif or link to demo
+![Video](https://github.com/shubyaa/Django_travel_Website/blob/main/res/hover.mp4)
+
+![Video](https://github.com/shubyaa/Django_travel_Website/blob/main/res/login.mp4)
+
 
 ## Tech Stack
 
