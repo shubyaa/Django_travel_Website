@@ -10,26 +10,28 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from os import path
+from dotenv import load_dotenv, find_dotenv
 import os
 from pathlib import Path
 import django.http.request as re
+import environ as env
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Enabling Environment Variables
+load_dotenv(find_dotenv())
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+r6+%dn&-%-p^yfpncqkdsn%6x+!1o%z#11uzw-)snv*9wcv_y'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
-    'django.http.HttpRequest.get_host()',
 ]
 
 
@@ -83,11 +85,11 @@ WSGI_APPLICATION = 'project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_database',
-        'USER': 'root',
-        'PASSWORD': '8451841454aA@',
-        'HOST': 'localhost'
+        'ENGINE': os.getenv('ENGINE'),
+        'NAME': os.getenv('NAME'),
+        'USER': os.getenv('USER'),
+        'PASSWORD': os.getenv('PASSWORD'),
+        'HOST': os.getenv('HOST')
     }
 }
 

@@ -1,5 +1,10 @@
 from django.shortcuts import render
 
+import os
+
+from dotenv import load_dotenv, find_dotenv
+from project.settings import BASE_DIR
+
 from django.db import connection
 
 from travel.models import Client, Destination, Flight, Gallery, Highlight, Hotel, News_Of_Tourism, Packages
@@ -9,6 +14,7 @@ from PIL import Image
 import urllib.request
 from io import BytesIO
 
+load_dotenv(find_dotenv(BASE_DIR))
  
 def getNews():
     mylist = []
