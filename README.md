@@ -3,7 +3,7 @@
 
 A Travel Agency website developed using Python Django and MySQL Database.
 
-<img src="https://github.com/shubyaa/Django_travel_Website/blob/main/res/favicon.png" alt="drawing" width="200"/>
+<img src="https://github.com/shubyaa/Django_travel_Website/blob/main/res/favicon.png" align="center" alt="drawing" width="100"/>
 
 ## Badges
 
